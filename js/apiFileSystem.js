@@ -8,7 +8,9 @@ window.addEventListener("load", () => {
     resultado = document.getElementById("result");
     inputUI = document.getElementById("nameFile");
     btnCreateFile = document.getElementById("btn-create-file");
-    btnCreateFile.addEventListener("click", createFile());
+    
+    btnCreateFile.addEventListener("click", createFile);
+    
     //para chrome
     navigator.webkitPersistentStorage.requestQuota(QUOTA, acceso);
 });
@@ -19,15 +21,19 @@ function acceso() {
 }
 
 function createFileSystemLocal(objFileSystem) {
-    console.log("2.objFileSystem");
+    
     pathFileSystem = objFileSystem.root;
+    console.log("2.objFileSystem");
+    console.log(pathFileSystem);
 }
 
 function errores(e) {
     alert("Se ha producido un error" + e.code);
 }
 
-function createFile() {
+function createFile(e) {
+    e.preventDefault();
+    console.log("iniciando la creacion del txt");
     let nameFile = inputUI.value;
     if (nameFile.length != "") {
         pathFileSystem.getFile(nameFile, { create: true, exclusive: true }, successCreation, errores);
@@ -36,7 +42,7 @@ function createFile() {
 }
 
 function successCreation(file) {
-    console.log("3.Informacion del archivo creado.");
+    console.log("4.Información del archivo creado.");
     inputUI.value = "";
     resultado.innerHTML = "Éxito en la creación.<br>";
     resultado.innerHTML += "Name:" + file.name + "<br>";

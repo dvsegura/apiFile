@@ -32,11 +32,12 @@ function errores(e) {
 }
 
 function createFile(e) {
-    e.preventDefault();
+    e.preventDefault();     
     console.log("iniciando la creacion del txt");
     let nameFile = inputUI.value;
     if (nameFile.length != "") {
         pathFileSystem.getFile(nameFile, { create: true, exclusive: true }, successCreation, errores);
+        //getDirectory 
         console.log("3.Create File");
     }
 }

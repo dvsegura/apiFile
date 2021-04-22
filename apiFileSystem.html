@@ -4,16 +4,23 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Crear Archivos</title>
 </head>
 <body>
     <div class="container">
+        <h1>Crear Archivos con la extensión Directories & System</h1>            
+            <ol>
+                <li>Petición al navegador(Chrome) de utilización de espacio del disco duro (Temporal o Persistente) <b>webkitPersistentStorage.requestQuota(quota, callback)</b>.</li>                  
+                <li>Crear el sistema de archivos(solo accesible de la aplicación,navegador) <b>webkitRequestFileSystem(PERSISTENT, quota, callback_success, callback_err)</b></li>  
+                <li>Crear archivos y directorios(<b>getFile(archivos)/ getDirectories(directorios)</b>).</li>                
+            </ol> 
+        <h3>Ejemplo:</h3>            
         <form id="form">
-            <input type="text" id="nameFile">
+            <input type="text" id="nameFile" placeholder="Escriba nombre de archivo">
             <button id="btn-create-file">Crear</button>
         </form>
         <div id="result"></div>
-        <a href="index.html">back</a>
+        <a href="index.html">Back</a>
     </div>
     <script src="js/apiFileSystem.js" type="text/javascript"></script>
 </body>

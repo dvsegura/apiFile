@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API File writer</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Escribir en los archivos</h1>            
+            <ol>
+                <li>Interfaz Entry => Interfaz FileEntry => Metodos:</li>
+                <ul>
+                    <li>createWriter() => Objeto <b> FileWriter</b></li>
+                    <li>File()</li>
+                </ul>
+            </ol>
+            <h2>Objeto FileWriter</h2>
+                <h3>Metodos:</h3>    
+                <ul>
+                    <li>Write(datos)</li>
+                    <li>seek(desplazamiento)</li>
+                    <li>truncate(tamaño)</li>
+                </ul> 
+                <h3>Propiedades:</h3>    
+                <ul>
+                    <li>position</li>
+                    <li>length</li>                    
+                </ul>
+                <h3>Eventos:</h3>    
+                <ul>     
+                    <li>write</li>               
+                    <li>writerend</li>                    
+                </ul>
+            <p>Nota: Transformar los datos en un Blob</p>
+            <p>Usa constructor un objeto blob</p>    
+        <h3>Ejemplo:</h3>            
+        <form id="form">
+            <input type="text" id="archivo_origen" placeholder="Escriba nombre de archivo">
+            <textarea name="" id="texto" cols="30" rows="10"></textarea>
+            <button id="btn-create-file">Aceptar</button>           
+        </form>
+        <div id="result" style="padding:20px;"></div>
+        <a href="index.html">Back</a>
+    </div>
+    <script src="js/apiFileWriter.js" type="text/javascript"></script>
+</body>
+</html>
